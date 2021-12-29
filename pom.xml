@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>top.ooovo</groupId>
+    <artifactId>blog-backend</artifactId>
+    <version>1.0-snapshot</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>top.ooovo</groupId>
+            <artifactId>ovo-framework-starter-web</artifactId>
+            <version>1.0-snapshot</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>ovo-framework</id>
+            <name>The Maven Repository on Github</name>
+            <url>https://ovo-z.github.io/ovo-framework/maven-repo/</url>
+        </repository>
+    </repositories>
+    
+</project>
