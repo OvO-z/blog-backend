@@ -8,13 +8,66 @@
     <artifactId>blog-backend</artifactId>
     <version>1.0-snapshot</version>
 
+    <properties>
+        <ovo.version>1.0-snapshot</ovo.version>
+        <!-- Maven 相关 -->
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
+
+        <!-- Web 相关 -->
         <dependency>
             <groupId>top.ooovo</groupId>
             <artifactId>ovo-framework-starter-web</artifactId>
-            <version>1.0-snapshot</version>
+            <version>${ovo.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>top.ooovo</groupId>
+            <artifactId>ovo-framework-starter-security</artifactId>
+            <version>${ovo.version}</version>
+        </dependency>
+
+        <!-- DB 相关 -->
+        <dependency>
+            <groupId>top.ooovo</groupId>
+            <artifactId>ovo-framework-starter-mybatis</artifactId>
+            <version>${ovo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>top.ooovo</groupId>
+            <artifactId>ovo-framework-starter-redis</artifactId>
+            <version>${ovo.version}</version>
+        </dependency>
+
     </dependencies>
+
+    <build>
+        <!-- 设置构建的 jar 包名 -->
+        <finalName>${artifactId}</finalName>
+        <plugins>
+            <!-- 打包 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.2.RELEASE</version>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal> <!-- 将引入的 jar 打入其中 -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>
