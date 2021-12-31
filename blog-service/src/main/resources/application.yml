@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: blog-service
+
+  profiles:
+    active: local
+
+  # Servlet 配置
+  servlet:
+    # 文件上传相关配置项
+    multipart:
+      max-file-size: 16MB # 单个文件大小
+      max-request-size: 32MB # 设置总上传的文件大小
+
+  # Jackson 配置项
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true # 设置 Date 的格式，使用时间戳
+      write-date-timestamps-as-nanoseconds: false # 设置不使用 nanoseconds 的格式。例如说 1611460870.401，而是直接 1611460870401
+      write-durations-as-timestamps: true # 设置 Duration 的格式，使用时间戳
+      fail-on-empty-beans: false # 允许序列化无属性的 Bean
+
+# MyBatis Plus 的配置项
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: AUTO # 自增ID
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+  mapper-locations: classpath*:mapper/*.xml
+  configuration-properties:
+    prefix: ""
+    wildcardEscapeClause: ""
+    limitBefore: ""
+    limitAfter: "LIMIT #{maxResults} OFFSET #{firstResult}"
+    limitBetween: ""
+    limitOuterJoinBetween: ""
+    limitBeforeNativeQuery: ""
+    orderBy: "order by ${orderByColumns}"
+    blobType: "BLOB"
+    boolValue: "TRUE"
+
+
+--- #################### 框架相关配置 ####################
+
+ovo:
+  info:
+    version: 1.0.0
+    base-package: top.ooovo.blog.service
+  web:
+    api-prefix: /api
+    controller-package: ${ovo.info.base-package}
+  swagger:
+    title: 管理后台
+    description: 提供管理员管理的所有功能
+    version: ${ovo.info.version}
+    base-package: ${ovo.info.base-package}.modules
+  error-code: # 错误码相关配置项
+    constants-class-list:
+
+
+debug: false

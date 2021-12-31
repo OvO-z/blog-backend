@@ -6,7 +6,13 @@
 
     <groupId>top.ooovo</groupId>
     <artifactId>blog-backend</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-snapshot</version>
+
+    <modules>
+        <module>blog-dependencies</module>
+        <module>blog-service</module>
+    </modules>
 
     <properties>
         <ovo.version>1.0-snapshot</ovo.version>
@@ -17,34 +23,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-
-        <!-- Web 相关 -->
-        <dependency>
-            <groupId>top.ooovo</groupId>
-            <artifactId>ovo-framework-starter-web</artifactId>
-            <version>${ovo.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>top.ooovo</groupId>
-            <artifactId>ovo-framework-starter-security</artifactId>
-            <version>${ovo.version}</version>
-        </dependency>
-
-        <!-- DB 相关 -->
-        <dependency>
-            <groupId>top.ooovo</groupId>
-            <artifactId>ovo-framework-starter-mybatis</artifactId>
-            <version>${ovo.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>top.ooovo</groupId>
-            <artifactId>ovo-framework-starter-redis</artifactId>
-            <version>${ovo.version}</version>
-        </dependency>
-
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>top.ooovo</groupId>
+                <artifactId>blog-dependencies</artifactId>
+                <version>${ovo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <!-- 设置构建的 jar 包名 -->
@@ -68,13 +57,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>ovo-framework</id>
-            <name>The Maven Repository on Github</name>
-            <url>https://ovo-z.github.io/ovo-framework/maven-repo/</url>
-        </repository>
-    </repositories>
     
 </project>
