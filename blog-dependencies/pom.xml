@@ -145,7 +145,6 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 
@@ -153,7 +152,7 @@
         <repository>
             <id>ovo-framework</id>
             <name>The Maven Repository on Github</name>
-            <url>https://ovo-z.github.io/ovo-framework/maven-repo/</url>
+            <url>https://ovo-z.github.io/ovo-framework/maven-repo</url>
         </repository>
     </repositories>
 </project>
