@@ -22,7 +22,7 @@ public class InfConfigRespVO extends InfConfigBaseVO {
     @ApiModelProperty(value = "参数配置序号", required = true, example = "1024")
     private Long id;
 
-    @ApiModelProperty(value = "参数键名", required = true, example = "yunai.db.username")
+    @ApiModelProperty(value = "参数键名", required = true, example = "ovo.db.username")
     @NotBlank(message = "参数键名长度不能为空")
     @Size(max = 100, message = "参数键名长度不能超过100个字符")
     private String key;

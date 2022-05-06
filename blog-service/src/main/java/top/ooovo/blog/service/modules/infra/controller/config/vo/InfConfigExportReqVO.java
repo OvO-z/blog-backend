@@ -21,7 +21,7 @@ public class InfConfigExportReqVO {
     @ApiModelProperty(value = "参数名称", example = "模糊匹配")
     private String name;
 
-    @ApiModelProperty(value = "参数键名", example = "yunai.db.username", notes = "模糊匹配")
+    @ApiModelProperty(value = "参数键名", example = "ovo.db.username", notes = "模糊匹配")
     private String key;
 
     @ApiModelProperty(value = "参数类型", example = "1", notes = "参见 SysConfigTypeEnum 枚举")
