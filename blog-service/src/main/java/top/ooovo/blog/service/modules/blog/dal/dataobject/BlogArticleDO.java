@@ -20,6 +20,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BlogArticleDO extends BaseDO implements Serializable {
+
     /**
      * 文章ID
      */
