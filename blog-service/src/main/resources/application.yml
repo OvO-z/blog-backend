@@ -1,7 +1,6 @@
 spring:
   application:
     name: blog-service
-
   profiles:
     active: local
 
@@ -42,7 +41,6 @@ mybatis-plus:
     orderBy: "order by ${orderByColumns}"
     blobType: "BLOB"
     boolValue: "TRUE"
-
 
 --- #################### 框架相关配置 ####################
 

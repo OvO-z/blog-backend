@@ -8,7 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2021/12/31
  */
 
-@SpringBootApplication
+@SuppressWarnings("SpringComponentScan")
+@SpringBootApplication(scanBasePackages = {"${ovo.info.base-package}"})
 public class BlogApplication {
     public static void main(String[] args) {
         SpringApplication.run(BlogApplication.class, args);

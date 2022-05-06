@@ -27,7 +27,6 @@
         <lombok.version>1.18.20</lombok.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <hutool.version>5.6.1</hutool.version>
-        <aliyun-oss.version>2.5.0</aliyun-oss.version>
     </properties>
 
 
@@ -83,6 +82,7 @@
                 <artifactId>swagger-annotations</artifactId>
                 <version>${swagger-annotation.version}</version>
             </dependency>
+
             <!-- DB 相关 -->
             <dependency>
                 <groupId>top.ooovo</groupId>
