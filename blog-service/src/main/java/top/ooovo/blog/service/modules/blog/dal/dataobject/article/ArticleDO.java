@@ -1,4 +1,4 @@
-package top.ooovo.blog.service.modules.blog.dal.dataobject;
+package top.ooovo.blog.service.modules.blog.dal.dataobject.article;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -19,7 +19,7 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BlogArticleDO extends BaseDO implements Serializable {
+public class ArticleDO extends BaseDO implements Serializable {
 
     /**
      * 文章ID

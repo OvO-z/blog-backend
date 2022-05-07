@@ -65,17 +65,8 @@ public class SysUserServiceImpl implements SysUserService {
         userMapper.updateById(updateObj);
     }
 
-    /**
-     * TODO
-     *
-     * @param id 用户编号
-     * @return: void
-     * @author: currylin
-     * @date: 2021/12/3 16:34
-     */
     @Override
     public void deleteUser(Long id) {
-        // TODO @currylin：删除用户实现
         // 检验用户是否存在
         this.checkUserExists(id);
         // 删除用户
@@ -100,15 +91,6 @@ public class SysUserServiceImpl implements SysUserService {
         return userMapper.selectByUsername(username);
     }
 
-    /**
-     * @Description: 修改用户状态
-     *
-     * @param id 用户编号
-     * @param status 用户状态
-     * @return:
-     * @author: currylin
-     * @date: 2021/12/3 16:58
-     */
     @Override
     public void updateUserStatus(Long id, Integer status) {
         //检查用户存在
@@ -120,53 +102,23 @@ public class SysUserServiceImpl implements SysUserService {
         userMapper.updateById(updateObj);
     }
 
-    /**
-     * 通过用户昵称查询用户
-     *
-     * @param nickname 用户昵称
-     * @return: java.util.List<top.ooovo.blog.service.modules.system.dal.dataobject.user.SysUserDO>
-     * @author: currylin
-     * @date: 2021/12/3 17:14
-     */
+
     @Override
     public List<SysUserDO> getUsersByNickname(String nickname) {
         return userMapper.selectListByNickname(nickname);
     }
 
-    /**
-     * 通过账号查询用户
-     *
-     * @param username 用户账号
-     * @return: java.util.List<top.ooovo.blog.service.modules.system.dal.dataobject.user.SysUserDO>
-     * @author: currylin
-     * @date: 2021/12/3 17:19
-     */
     @Override
     public List<SysUserDO> getUsersByUsername(String username) {
         return userMapper.selectListByUsername(username);
     }
 
-    /**
-     * @Description: 获取用户分页数据
-     *
-     * @param reqVO
-     * @return: 用户账号，状态，开始时间，结束时间
-     * @author: currylin
-     * @date: 2021/12/3 17:25
-     */
     @Override
     public PageResult<SysUserDO> getUserPage(SysUserPageReqVO reqVO) {
        return userMapper.selectPage(reqVO);
     }
 
-    /**
-     * @Description: 获取用户列表
-     *
-     * @param ids
-     * @return: 用户账号，状态，开始时间，结束时间
-     * @author: currylin
-     * @date: 2021/12/3 19:32
-     */
+
     @Override
     public List<SysUserDO> getUsers(Collection<Long> ids) {
         return userMapper.selectBatchIds(ids);
@@ -189,8 +141,6 @@ public class SysUserServiceImpl implements SysUserService {
      *
      * @param id 用户编号
      * @return:
-     * @author: currylin
-     * @date: 2021/12/3 16:39
      */
     public void checkUserExists(Long id) {
         if (id == null) {
