@@ -28,4 +28,5 @@ public interface ArticleMapper extends BaseMapperX<ArticleDO> {
                 .eqIfPresent("status", reqVO.getStatus())
                 .betweenIfPresent("create_time", reqVO.getBeginTime(), reqVO.getEndTime()));
     }
+
 }
