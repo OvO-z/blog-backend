@@ -31,6 +31,11 @@ public class CategoryDO extends BaseDO implements Serializable {
      */
     private String name;
 
+    /**
+     * 文章总数
+     */
+    private Integer count;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

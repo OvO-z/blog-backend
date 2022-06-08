@@ -13,11 +13,13 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class CategoryBaseVO {
 
-    @ApiModelProperty(name = "id", value = "分类id", dataType = "Integer")
+    @ApiModelProperty(name = "id", value = "分类id", dataType = "Long")
     private Integer id;
 
     @NotBlank(message = "分类名不能为空")
-    @ApiModelProperty(name = "categoryName", value = "分类名", required = true, dataType = "String")
-    private String categoryName;
+    @ApiModelProperty(name = "name", value = "分类名", required = true, dataType = "String")
+    private String name;
 
+    @ApiModelProperty(name = "count", value = "文章总数", required = true, dataType = "Integer")
+    private Integer count;
 }

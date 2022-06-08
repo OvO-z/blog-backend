@@ -1,8 +1,11 @@
 package top.ooovo.blog.service.modules.blog.service.category;
 
+import top.ooovo.blog.service.modules.blog.controller.category.vo.CategoryCreateReqVO;
+import top.ooovo.blog.service.modules.blog.controller.category.vo.CategoryUpdateReqVO;
 import top.ooovo.blog.service.modules.blog.dal.dataobject.category.CategoryDO;
 import top.ooovo.framework.common.pojo.PageResult;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -29,11 +32,11 @@ public interface CategoryService {
     /**
      * 创建分类
      */
-    void createCategory();
+    void createCategory(@Valid CategoryCreateReqVO reqVO);
 
     /**
      * 修改分类
      * @param id 分类ID
      */
-    void updateCategory(Long id);
+    void updateCategory(@Valid CategoryUpdateReqVO reqVO);
 }
