@@ -19,7 +19,9 @@ public interface CategoryService {
      * 查询分类列表
      * @return 分类列表
      */
-    PageResult<CategoryDO> listCategories();
+    List<CategoryDO> listCategories();
+
+    PageResult<CategoryDO> pageCategories();
 
     /**
      * 删除分类
@@ -32,7 +34,7 @@ public interface CategoryService {
     /**
      * 创建分类
      */
-    void createCategory(@Valid CategoryCreateReqVO reqVO);
+    Long createCategory(@Valid CategoryCreateReqVO reqVO);
 
     /**
      * 修改分类
