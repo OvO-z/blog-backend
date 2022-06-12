@@ -1,6 +1,7 @@
 package top.ooovo.blog.service.modules.blog.service.category;
 
 import top.ooovo.blog.service.modules.blog.controller.category.vo.CategoryCreateReqVO;
+import top.ooovo.blog.service.modules.blog.controller.category.vo.CategoryPageReqVO;
 import top.ooovo.blog.service.modules.blog.controller.category.vo.CategoryUpdateReqVO;
 import top.ooovo.blog.service.modules.blog.dal.dataobject.category.CategoryDO;
 import top.ooovo.framework.common.pojo.PageResult;
@@ -21,7 +22,11 @@ public interface CategoryService {
      */
     List<CategoryDO> listCategories();
 
-    PageResult<CategoryDO> pageCategories();
+    /**
+     * 查询分类分页列表
+     * @return 分页列表
+     */
+    PageResult<CategoryDO> pageCategories(CategoryPageReqVO reqVO);
 
     /**
      * 删除分类

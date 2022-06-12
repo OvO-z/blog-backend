@@ -116,11 +116,6 @@
             </dependency>
             <!-- 工具类相关 -->
             <dependency>
-                <groupId>org.cqu</groupId>
-                <artifactId>cqu-common</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>

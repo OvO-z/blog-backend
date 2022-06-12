@@ -3,6 +3,7 @@ package top.ooovo.blog.service.modules.blog.service.category.impl;
 import cn.hutool.core.util.StrUtil;
 import org.springframework.stereotype.Service;
 import top.ooovo.blog.service.modules.blog.controller.category.vo.CategoryCreateReqVO;
+import top.ooovo.blog.service.modules.blog.controller.category.vo.CategoryPageReqVO;
 import top.ooovo.blog.service.modules.blog.controller.category.vo.CategoryUpdateReqVO;
 import top.ooovo.blog.service.modules.blog.convert.category.CategoryConvert;
 import top.ooovo.blog.service.modules.blog.dal.dataobject.category.CategoryDO;
@@ -31,13 +32,12 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<CategoryDO> listCategories() {
-
-        return null;
+        return categoryMapper.selectList();
     }
 
     @Override
-    public PageResult<CategoryDO> pageCategories() {
-        return null;
+    public PageResult<CategoryDO> pageCategories(CategoryPageReqVO reqVO) {
+        return categoryMapper.selectPage(reqVO);
     }
 
     @Override
@@ -72,9 +72,9 @@ public class CategoryServiceImpl implements CategoryService {
      * @param name
      */
     private void checkCreateOrUpdate(Long id, String name) {
-        // 校验用户存在
+        // 校验分类存在
         this.checkCategoryExists(id);
-        // 校验用户名唯一
+        // 校验分类名称唯一
         this.checkNameUnique(id, name);
     }
 
@@ -105,12 +105,12 @@ public class CategoryServiceImpl implements CategoryService {
         if (category == null) {
             return;
         }
-        // 如果 id 为空，说明不用比较是否为相同 id 的用户
+        // 如果 id 为空，说明不用比较是否为相同 id 的分类
         if (id == null) {
             throw exception(CATEGORY_NAME_EXISTS);
         }
         if (!category.getId().equals(id)) {
-            throw exception(CATEGORY_NOT_EXISTS);
+            throw exception(CATEGORY_NAME_EXISTS);
         }
     }
 }

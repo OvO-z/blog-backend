@@ -16,7 +16,7 @@ import javax.validation.constraints.NotEmpty;
 @ApiModel("用户创建 Request VO")
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class SysUserCreateReqVO extends SysUserBaseVO{
+public class SysUserCreateReqVO extends SysUserBaseVO {
 
     @ApiModelProperty(value = "密码", required = true, example = "123456")
     @NotEmpty(message = "密码不能为空")

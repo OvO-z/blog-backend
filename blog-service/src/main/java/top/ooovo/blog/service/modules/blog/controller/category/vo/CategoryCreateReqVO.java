@@ -1,9 +1,12 @@
 package top.ooovo.blog.service.modules.blog.controller.category.vo;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * @author QAQ
@@ -12,7 +15,11 @@ import lombok.ToString;
 
 @ApiModel("分类创建 Request VO")
 @Data
-@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class CategoryCreateReqVO extends CategoryBaseVO{
+public class CategoryCreateReqVO {
+
+    @NotBlank(message = "分类名不能为空")
+    @ApiModelProperty(name = "name", value = "分类名", required = true, dataType = "String")
+    private String name;
+
 }
