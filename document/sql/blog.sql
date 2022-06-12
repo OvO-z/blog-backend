@@ -325,8 +325,8 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- ----------------------------
 -- Table structure for sy_notice
 -- ----------------------------
-DROP TABLE IF EXISTS `sy_notice`;
-CREATE TABLE `sy_notice`  (
+DROP TABLE IF EXISTS `sys_notice`;
+CREATE TABLE `sys_notice`  (
 `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '公告ID',
 `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公告标题',
 `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公告内容',

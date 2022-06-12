@@ -89,6 +89,13 @@ public interface DictDataService {
     DictDataDO getDictData(Long id);
 
     /**
+     * 获得字典数据列表
+     *
+     * @return 字典数据全列表
+     */
+    List<DictDataDO> getDictDatas();
+
+    /**
      * 获得指定字典类型的数据数量
      *
      * @param dictType 字典类型

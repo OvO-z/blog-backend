@@ -22,7 +22,7 @@ public interface SysMenuMapper extends BaseMapperX<SysMenuDO> {
                 .eq("name", name));
     }
 
-    default Integer selectCountByParentId(Long parentId) {
+    default Long selectCountByParentId(Long parentId) {
         return selectCount(new QueryWrapperX<SysMenuDO>().eq("parent_id", parentId));
     }
 

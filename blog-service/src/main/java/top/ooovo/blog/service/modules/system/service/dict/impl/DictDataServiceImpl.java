@@ -184,6 +184,13 @@ public class DictDataServiceImpl implements DictDataService {
     }
 
     @Override
+    public List<DictDataDO> getDictDatas() {
+        List<DictDataDO> list = dictDataMapper.selectList();
+        list.sort(COMPARATOR_TYPE_AND_SORT);
+        return list;
+    }
+
+    @Override
     public long countByDictType(String dictType) {
         return dictDataMapper.selectCountByDictType(dictType);
     }

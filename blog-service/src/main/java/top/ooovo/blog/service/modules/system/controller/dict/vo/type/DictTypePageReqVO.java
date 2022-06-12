@@ -1,16 +1,16 @@
 package top.ooovo.blog.service.modules.system.controller.dict.vo.type;
 
-import cn.iocoder.yudao.framework.common.pojo.PageParam;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
+import top.ooovo.framework.common.pojo.PageParam;
 
 import javax.validation.constraints.Size;
 import java.util.Date;
 
-import static cn.iocoder.yudao.framework.common.util.date.DateUtils.FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND;
+import static top.ooovo.framework.common.util.date.DateUtils.FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND;
 
 @ApiModel("管理后台 - 字典类型分页列表 Request VO")
 @Data
