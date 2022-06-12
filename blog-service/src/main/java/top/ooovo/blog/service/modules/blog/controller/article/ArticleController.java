@@ -35,7 +35,7 @@ public class ArticleController {
     @ApiImplicitParam(name = "articleId", value = "文章id", required = true, dataType = "Integer")
     @GetMapping("/admin/articles/{articleId}")
     public CommonResult<ArticleRespVO> getArticleBackById(@PathVariable("articleId") Integer articleId) {
-        // TODO articlecontroller
+        // TODO article controller
         return null;
     }
 }

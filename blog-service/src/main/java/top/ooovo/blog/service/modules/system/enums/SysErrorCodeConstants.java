@@ -45,5 +45,9 @@ public interface SysErrorCodeConstants {
     // ==========  博客模块 1002005000 ==========
     ErrorCode CATEGORY_NAME_EXISTS = new ErrorCode(1002005000, "分类名已经存在");
     ErrorCode CATEGORY_NOT_EXISTS = new ErrorCode(1002005001, "分类不存在");
+
+    // ========== 通知公告 1002008000 ==========
+    ErrorCode NOTICE_NOT_FOUND = new ErrorCode(1002008001, "当前通知公告不存在");
+
 }
 
