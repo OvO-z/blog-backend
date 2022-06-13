@@ -1,12 +1,12 @@
 package top.ooovo.blog.service.modules.blog.dal.dataobject.article;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.*;
-import top.ooovo.framework.mybatis.core.dataobject.BaseDO;
-
 import java.io.Serializable;
+import lombok.Data;
+import top.ooovo.framework.mybatis.core.dataobject.BaseDO;
 
 /**
  * 博客文章表
@@ -14,17 +14,11 @@ import java.io.Serializable;
  */
 @TableName(value ="blog_article")
 @Data
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class ArticleDO extends BaseDO implements Serializable {
-
     /**
      * 文章ID
      */
-    @TableId
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
@@ -55,7 +49,7 @@ public class ArticleDO extends BaseDO implements Serializable {
     /**
      * 文章类型
      */
-    private Integer type;
+    private Byte type;
 
     /**
      * 是否置顶
@@ -65,7 +59,12 @@ public class ArticleDO extends BaseDO implements Serializable {
     /**
      * 文章状态
      */
-    private Integer status;
+    private Byte status;
+
+    /**
+     * 文章浏览量
+     */
+    private Long view;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

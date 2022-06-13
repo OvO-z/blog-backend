@@ -8,21 +8,21 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 import static top.ooovo.framework.common.util.date.DateUtils.FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND;
 
 /**
  * @author QAQ
- * @date 2022/6/4
+ * @date 2022/6/13
  */
+
+
 @ApiModel("文章信息 Response VO")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class ArticleRespVO extends ArticleBaseVO {
+public class ArticleSimpleRespVO {
 
     /**
      * 文章id
@@ -57,8 +57,4 @@ public class ArticleRespVO extends ArticleBaseVO {
     @ApiModelProperty(value = "发布时间", example = "2020-10-24 00:00:00")
     @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
     private Date createTime;
-
-    @ApiModelProperty(value = "修改时间", example = "2020-10-24 23:59:59")
-    @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
-    private Date updateTime;
 }

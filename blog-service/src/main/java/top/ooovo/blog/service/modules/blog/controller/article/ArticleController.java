@@ -32,10 +32,12 @@ public class ArticleController {
     private ArticleService articleService;
 
     @ApiOperation("根据id查看文章")
-    @ApiImplicitParam(name = "articleId", value = "文章id", required = true, dataType = "Integer")
+    @ApiImplicitParam(name = "articleId", value = "文章id", required = true, dataType = "Long")
     @GetMapping("/admin/articles/{articleId}")
-    public CommonResult<ArticleRespVO> getArticleBackById(@PathVariable("articleId") Integer articleId) {
+    public CommonResult<ArticleRespVO> getArticleBackById(@PathVariable("articleId") Long articleId) {
         // TODO article controller
         return null;
     }
+
+
 }
