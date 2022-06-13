@@ -36,7 +36,8 @@ public interface DictDataMapper extends BaseMapperX<DictDataDO> {
                 .likeIfPresent(DictDataDO::getLabel, reqVO.getLabel())
                 .likeIfPresent(DictDataDO::getDictType, reqVO.getDictType())
                 .eqIfPresent(DictDataDO::getStatus, reqVO.getStatus())
-                .orderByDesc(Arrays.asList(DictDataDO::getDictType, DictDataDO::getSort)));
+                .orderByDesc(DictDataDO::getDictType)
+                .orderByDesc(DictDataDO::getSort));
     }
 
     @Select("SELECT COUNT(*) FROM system_dict_data WHERE update_time > #{maxUpdateTime}")
