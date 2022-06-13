@@ -34,7 +34,7 @@ public class DictTypeDO extends BaseDO implements Serializable {
     /**
      * 状态（0正常 1停用）
      */
-    private Byte status;
+    private Integer status;
 
     /**
      * 备注

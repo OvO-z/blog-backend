@@ -16,12 +16,6 @@ import javax.validation.Valid;
 public interface ArticleService {
 
     /**
-     * 查询文章归档
-     * @return 文章归档
-     */
-    PageResult<ArticleDO> listArchives();
-
-    /**
      * 获得文章
      * @param id 文章id
      * @return 文章
@@ -43,12 +37,6 @@ public interface ArticleService {
 
 
     /**
-     * 修改文章置顶
-     *
-     */
-    void updateArticleTop(Long id);
-
-    /**
      * 删除文章
      * @param id
      */
@@ -59,7 +47,7 @@ public interface ArticleService {
      * @param reqVO 创建信息
      * @return 文章编号
      */
-    String createArticle(@Valid ArticleCreateReqVO reqVO);
+    Long createArticle(@Valid ArticleCreateReqVO reqVO);
 
     /**
      * 修改文章

@@ -234,6 +234,7 @@ public class DictDataServiceImpl implements DictDataService {
         if (dictType == null) {
             throw exception(DICT_TYPE_NOT_EXISTS);
         }
+
         if (!CommonStatusEnum.ENABLE.getStatus().equals(dictType.getStatus())) {
             throw exception(DICT_TYPE_NOT_ENABLE);
         }

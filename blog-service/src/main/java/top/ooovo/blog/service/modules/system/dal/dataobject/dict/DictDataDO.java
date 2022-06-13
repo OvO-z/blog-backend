@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import top.ooovo.framework.mybatis.core.dataobject.BaseDO;
 
 /**
@@ -14,7 +15,8 @@ import top.ooovo.framework.mybatis.core.dataobject.BaseDO;
  */
 @TableName(value ="sys_dict_data")
 @Data
-public class DictDataDO extends BaseDO implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+public class DictDataDO extends BaseDO {
     /**
      * 字典编码
      */
@@ -61,6 +63,4 @@ public class DictDataDO extends BaseDO implements Serializable {
      */
     private String remark;
 
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }

@@ -42,9 +42,13 @@ public interface SysErrorCodeConstants {
     ErrorCode ROLE_CODE_DUPLICATE = new ErrorCode(1002003002, "已经存在编码为【{}】的角色");
     ErrorCode ROLE_CAN_NOT_UPDATE_SYSTEM_TYPE_ROLE = new ErrorCode(1002003004, "不能操作类型为系统内置的角色");
 
-    // ==========  博客模块 1002005000 ==========
+    // ==========  分类模块 1002005000 ==========
     ErrorCode CATEGORY_NAME_EXISTS = new ErrorCode(1002005000, "分类名已经存在");
     ErrorCode CATEGORY_NOT_EXISTS = new ErrorCode(1002005001, "分类不存在");
+
+    // ==========  文章模块 1002005000 ==========
+    ErrorCode ARTICLE_NAME_EXISTS = new ErrorCode(1002005000, "文章名已经存在");
+    ErrorCode ARTICLE_NOT_EXISTS = new ErrorCode(1002005001, "文章不存在");
 
     // ========== 通知公告 1002008000 ==========
     ErrorCode NOTICE_NOT_FOUND = new ErrorCode(1002008001, "当前通知公告不存在");

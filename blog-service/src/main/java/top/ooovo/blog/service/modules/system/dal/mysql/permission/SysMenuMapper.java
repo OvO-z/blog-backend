@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import top.ooovo.blog.service.modules.system.controller.permission.vo.menu.SysMenuListReqVO;
 import top.ooovo.blog.service.modules.system.dal.dataobject.permission.SysMenuDO;
 import top.ooovo.framework.mybatis.core.mapper.BaseMapperX;
+import top.ooovo.framework.mybatis.core.query.LambdaQueryWrapperX;
 import top.ooovo.framework.mybatis.core.query.QueryWrapperX;
 
 import java.util.Date;
@@ -23,7 +24,7 @@ public interface SysMenuMapper extends BaseMapperX<SysMenuDO> {
     }
 
     default Long selectCountByParentId(Long parentId) {
-        return selectCount(new QueryWrapperX<SysMenuDO>().eq("parent_id", parentId));
+        return selectCount(SysMenuDO::getParentId, parentId);
     }
 
     default List<SysMenuDO> selectList(SysMenuListReqVO reqVO) {
