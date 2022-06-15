@@ -8,7 +8,6 @@ import top.ooovo.framework.common.pojo.PageResult;
 import top.ooovo.framework.mybatis.core.mapper.BaseMapperX;
 import top.ooovo.framework.mybatis.core.query.LambdaQueryWrapperX;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -32,12 +31,12 @@ public interface DictDataMapper extends BaseMapperX<DictDataDO> {
 
 
     default PageResult<DictDataDO> selectPage(DictDataPageReqVO reqVO) {
+
         return selectPage(reqVO, new LambdaQueryWrapperX<DictDataDO>()
                 .likeIfPresent(DictDataDO::getLabel, reqVO.getLabel())
                 .likeIfPresent(DictDataDO::getDictType, reqVO.getDictType())
                 .eqIfPresent(DictDataDO::getStatus, reqVO.getStatus())
-                .orderByDesc(DictDataDO::getDictType)
-                .orderByDesc(DictDataDO::getSort));
+                .orderByDesc(Arrays.asList(DictDataDO::getDictType, DictDataDO::getSort)));
     }
 
     @Select("SELECT COUNT(*) FROM system_dict_data WHERE update_time > #{maxUpdateTime}")

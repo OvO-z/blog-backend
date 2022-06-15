@@ -3,7 +3,6 @@ package top.ooovo.blog.service.modules.blog.dal.mysql.article;
 import org.apache.ibatis.annotations.Mapper;
 import top.ooovo.blog.service.modules.blog.controller.article.vo.ArticlePageReqVO;
 import top.ooovo.blog.service.modules.blog.dal.dataobject.article.ArticleDO;
-import top.ooovo.blog.service.modules.blog.dal.dataobject.category.CategoryDO;
 import top.ooovo.framework.common.pojo.PageResult;
 import top.ooovo.framework.mybatis.core.mapper.BaseMapperX;
 import top.ooovo.framework.mybatis.core.query.QueryWrapperX;
