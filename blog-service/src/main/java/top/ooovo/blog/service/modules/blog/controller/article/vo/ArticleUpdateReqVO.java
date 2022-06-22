@@ -23,24 +23,24 @@ public class ArticleUpdateReqVO extends ArticleBaseVO {
      * 文章id
      */
     @NotBlank(message = "文章ID不能为空")
-    @ApiModelProperty(name = "id", value = "文章id", dataType = "Long")
+    @ApiModelProperty(name = "id", value = "文章id")
     private Long id;
 
     /**
      * 标题
      */
-    @ApiModelProperty(name = "title", value = "文章标题", required = true, dataType = "String")
+    @ApiModelProperty(name = "title", value = "文章标题", required = true)
     private String title;
 
     /**
      * 内容
      */
-    @ApiModelProperty(name = "content", value = "文章内容", required = true, dataType = "String")
+    @ApiModelProperty(name = "content", value = "文章内容", required = true)
     private String content;
 
     /**
      * 文章分类
      */
-    @ApiModelProperty(name = "categoryId", value = "文章分类", dataType = "Integer")
+    @ApiModelProperty(name = "categoryId", value = "文章分类")
     private Integer categoryId;
 }

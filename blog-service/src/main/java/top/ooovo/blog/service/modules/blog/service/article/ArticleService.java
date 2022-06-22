@@ -23,18 +23,10 @@ public interface ArticleService {
     ArticleDO getArticle(Long id);
 
     /**
-     * 根据编号查询文章
-     * @param code
-     * @return 文章
-     */
-    ArticleDO getArticleByCode(String code);
-
-    /**
      * 获得文章分页列表
      * @return
      */
     PageResult<ArticleDO> getArticlePage(@Valid ArticlePageReqVO reqVO);
-
 
     /**
      * 删除文章

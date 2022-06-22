@@ -40,11 +40,6 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public ArticleDO getArticleByCode(String code) {
-        return articleMapper.selectByCode(code);
-    }
-
-    @Override
     public PageResult<ArticleDO> getArticlePage(ArticlePageReqVO reqVO) {
         return articleMapper.selectPage(reqVO);
     }

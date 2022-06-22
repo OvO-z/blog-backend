@@ -28,9 +28,9 @@ public class CategoryRespVO {
     @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
     private Date createTime;
 
-    @ApiModelProperty(name = "name", value = "分类名", required = true, dataType = "String")
+    @ApiModelProperty(name = "name", value = "分类名", required = true)
     private String name;
 
-    @ApiModelProperty(name = "count", value = "文章总数", required = true, dataType = "Integer")
+    @ApiModelProperty(name = "count", value = "文章总数", required = true)
     private Integer count;
 }
