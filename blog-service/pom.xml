@@ -38,6 +38,10 @@
             <groupId>top.ooovo</groupId>
             <artifactId>ovo-framework-starter-mybatis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+        </dependency>
     </dependencies>
 
     <repositories>
